@@ -1,9 +1,20 @@
-import { Inter } from "next/font/google";
+import { Ranga, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { GRID_DATA_ITEMS } from "./data";
 
-const inter = Inter({ subsets: ["latin"] });
+const ranga = Ranga ({ 
+  subsets: ["latin"],
+  weight: '700',
+  variable: '--font-ranga-bold'
+});
+
+const RobotoCondensed = Roboto_Condensed ({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-roboto-condensed'
+})
+
 
 export const metadata = {
   title: "Create Next App",
@@ -12,34 +23,42 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div>
+    <html lang="en" className={`${ranga.variable} ${RobotoCondensed.variable}`}>
+      <body className={`font-roboto flex justify-center items-center min-h-screen`}>
+        <div className="w-[1000px] flex-col items-center pt-4 pb-4">
+          <div className="w-full bg-slate-100 flex flex-col items-center pb-10 pt-10">
+          <div className="text-2xl mb-5 underline decoration-3 decoration-blue-400">
+            Josue RUSHANIKA MUSICS
+          </div>
+          <div className="grid grid-cols-4 gap-1">
+            {GRID_DATA_ITEMS.map((gridDataItem) => {
+              const { id, attributes } = gridDataItem;
 
-        </div>
-
-        <div className="grid grid-cols-4 gap-1">
-          {GRID_DATA_ITEMS.map((gridDataItem) => {
-            const { id, attributes } = gridDataItem;
-
-            return (
-              <Link href={attributes.href}>
-                <div
-                  key={id}
-                  className={`${attributes.background} w-52 h-52
+              return (
+                <Link href={attributes.href}>
+                  <div
+                    key={id}
+                    className={`${attributes.background} w-52 h-52
                    flex items-end border-black border-[2px]`}
-                >
-                  <div  className={`bg-slate-200/75 w-full text-center mb-2
-                  hover:text-white  hover:bg-slate-700/75`}>{attributes.text}</div>
-                </div>
-              </Link>
-            );
-          })}
+                  >
+                    <div
+                      className={`bg-slate-200/75 w-full text-center mb-2
+                  hover:text-white  hover:bg-slate-700/75`}
+                    >
+                      {attributes.text}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+          </div>
+         
+
+          <br />
+
+          {children}
         </div>
-
-        <br />
-
-        {children}
       </body>
     </html>
   );
