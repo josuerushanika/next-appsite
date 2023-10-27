@@ -12,6 +12,18 @@ export default function Followers() {
      .then(response => response.json())
      .then(json => {
         console.log(`json`, json);
+
+          if(
+            json
+            && json.artists
+            && json.artists.items
+            && json.artists.items.length > 0
+          ) {
+            const followers = json.artists.items[0].followers.total;
+
+            setGoalString(`${followers}/?`);
+          }
+      
      })
 
    }, [])
