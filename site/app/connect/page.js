@@ -1,5 +1,5 @@
 // import Form from './email-list/form';
-// import Followers from './followers';
+import Followers from './followers';
 
 export default function Page() {
   return (
@@ -24,7 +24,7 @@ export default function Page() {
           </a>
           .
         </div>
-        {/* <Followers /> */}
+        <Followers />
         <br />
         <div>
           2. Follow me on{" "}
