@@ -1,5 +1,5 @@
-// import Form from './email-list/form';
 import Followers from './followers';
+import postContact from './email-list/post-contact';
 
 export default function Page() {
   return (
