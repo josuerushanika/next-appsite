@@ -19,7 +19,7 @@ export default function Followers() {
    }, [])
 
     return (
-        <div className="ml-[15px] lg:ml-[20px] mt-[5px]">
+        <div className="indent">
             Followers progress: {goalString}</div>
     )
 }
