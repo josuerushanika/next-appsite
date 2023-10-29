@@ -1,7 +1,7 @@
 'use client';
 import { useState, useTransition } from 'react';
 import postContact from "./post-contact";
-import Spinner from './spinner';
+import Spinner from 'components/spinner';
 
 
 export default function Form() {
@@ -54,7 +54,7 @@ export default function Form() {
                 disabled:bg-slate-50 disabled:text-slate-500`}>
                 {isPending 
                 ? (
-                    <span>
+                    <span className='flex justify-center items-center h-[36px]'>
                         <Spinner /> Sending
                     </span>
                 )

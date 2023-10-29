@@ -4,14 +4,7 @@ import postContact from './email-list/post-contact';
 
 export default function Page() {
   return (
-    <div
-      className={`w-full flex flex-col justify-center items-center
-        p-5 p-10 lg:p-10 text-md lg:text-xl
-        bg-gradient-to-b from-slate-100 to-pink-100 `}
-    >
-      <div className="title"> Let's hang around </div>
-
-      <div>
+      <>
         <div>Find my latest projects, upcoming live events, and releases!</div>
         <br />
         <div>
@@ -46,7 +39,6 @@ export default function Page() {
           Reach out for inquiries at{" "}
           <span className="underline">josuerushanika@gmail.com</span>
         </div>
-      </div>
-    </div>
+      </>
   );
 }
