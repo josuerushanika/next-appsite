@@ -1,4 +1,4 @@
-// import * as embeds from './embeds';
+import * as embeds from './embeds';
 import { POISON_WORMS_ID, IN_PERPETUITY_ID } from 'app/data';
 
 export const POISON_WORMS_TITLE = 'Poison Worms';
@@ -27,7 +27,7 @@ export const RECORDS_MAP = {
     albumImage: '/poison_worms_1000.png',
     recordHalfImage: '/poison_worms_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/7o1sArWvk2m61k6CuZKt93?si=f728d1ee64214102',
-    // Embed: embeds.PoisonWormsEmbed,
+    Embed: embeds.PoisonWormsEmbed,
     appleMusicLink: 'https://music.apple.com/us/album/poison-worms/1689163166?i=1689163167',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=Lqdxm7R23c4',
     lyrics: (
@@ -122,7 +122,7 @@ export const RECORDS_MAP = {
     albumImage: '/in_perpetuity_1000.png',
     recordHalfImage: '/in_perpetuity_record_half.png',
     spotifyLink: 'https://open.spotify.com/track/0Qer5Z5ut75UJevgRC8GIK?si=2444d5d5cdcc47f1',
-    // Embed: embeds.InPerpetuityEmbed,
+    Embed: embeds.InPerpetuityEmbed,
     appleMusicLink: 'https://music.apple.com/us/album/in-perpetuity/1677926229?i=1677926230',
     youtubeMusicLink: 'https://www.youtube.com/watch?v=XhSBF2_iqL4',
     lyrics: (
