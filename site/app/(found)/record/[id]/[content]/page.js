@@ -1,20 +1,26 @@
 import { RECORDS, CONTENT_PATHS, RECORDS_MAP } from "../data";
-
+import Player from "../player";
 
 export async function generatedStaticParams() {
-    const recordSegmentMaps = [];
+  const recordSegmentMaps = [];
 
-    RECORDS.forEach(record => {
-      CONTENT_PATHS.forEach(contentPath => {
-        recordSegmentMaps.push({id: record.id, content: contentPath }); 
-      });
+  RECORDS.forEach((record) => {
+    CONTENT_PATHS.forEach((contentPath) => {
+      recordSegmentMaps.push({ id: record.id, content: contentPath });
     });
+  });
 
-    return recordSegmentMaps;
+  return recordSegmentMaps;
 }
 
 export default function Page({ params: { id, content } }) {
-    const contentJsx = RECORDS_MAP[id] [content];
+  const contentJsx = RECORDS_MAP[id][content];
+  const { Embed } = RECORDS_MAP[id];
 
-    return contentJsx;
+  return (<>
+      <Player embed={<Embed/>}/>
+      <br />
+      {contentJsx}
+  </>
+  );
 }

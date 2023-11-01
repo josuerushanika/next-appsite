@@ -8,6 +8,7 @@ export async function generateStaticParams() {
   return RECORDS.map((record) => ({ id: record.id }));
 }
 
+
 export async function generateMetadata({ params }) {
   const { id } = params;
   const { title } = RECORDS_MAP[id];
@@ -24,8 +25,8 @@ export default function Page({ params }) {
       <div className="text-justify">{blurb}</div>
       <div className="text-sm text-slate-600">Release date: {date}</div>
       <div className="font-ranga flex justify-between w-[144px] text-2xl m-2 ">
-        <Link href={`/record/${id}/lyrics`}>Lyrics</Link>
-        <Link href={`/record/${id}/gear`}>Gear Used</Link>
+        <Link className="link" href={`/record/${id}/lyrics`}>Lyrics</Link>
+        <Link className="link" href={`/record/${id}/gear`}>Gear Used</Link>
       </div>
 
       <Player embed={<Embed />} />
